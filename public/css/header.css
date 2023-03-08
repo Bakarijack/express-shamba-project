@@ -6,3 +6,20 @@
     height: 100vh;
     width: 100%;
 }
+
+.sign_in,.login{
+    padding: 0.5em 1em;
+    font-weight: bold;
+    margin-left: 1em;
+}
+
+.nav-item:hover{
+    color: white;
+    text-decoration: underline;
+}
+
+.login:hover,
+.sign_in:hover{
+    background-color: grey;
+    color: white;
+}
