@@ -20,6 +20,6 @@ app.set('view engine', 'handlebars')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true }))
 
-app.use('/',indexRoutes)
+indexRoutes(app)
 
 module.exports = app
