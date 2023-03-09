@@ -5,9 +5,9 @@
             <h1>Log in</h1>
             <form id="login_form">
                 <div class="form-group mt-2">
-                    <label for="fieldEmail" class="control-label">Email</label>
+                    <label for="user_mail" class="control-label">Email</label>
                     <div>
-                        <input type="email" class="form-control" required id="user_email" name="email">
+                        <input type="email" class="form-control" required id="user_email" name="user_email">
                     </div>
                 </div>
                 <div class="form-group mt-2">
@@ -27,3 +27,31 @@
     </div>
 
 </div>
+
+<script>
+    const title = document.querySelector('title')
+    title.innerHTML = 'Login'
+
+    const form = document.getElementById('login_form')
+    form.addEventListener('submit', loginUser)
+
+    async function loginUser(event) {
+        event.preventDefault()
+
+        const email = document.getElementById('user_email').value
+        const password = document.getElementById('password').value
+
+        const result = await fetch('/api/login/process', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                email,
+                password
+            })
+        }).then(res => res.json())
+
+        console.log(result)
+    }
+</script>

@@ -6,7 +6,10 @@ module.exports = app => {
 
       app.get('/signup',indexController.signupPageRender )
 
-      app.get('/login',indexController.loginPageRender)
-      
       app.post('/api/signup/process',indexController.signupProcess)
+
+      app.get('/login',indexController.loginPageRender)
+
+      app.post('/api/login/process', indexController.loginProcess)
+      
 }
